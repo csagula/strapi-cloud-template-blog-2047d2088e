@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "vapi_content_library_pages",
+  "info": {
+    "singularName": "vapi-content-library-page",
+    "pluralName": "vapi-content-library-pages",
+    "displayName": "VAPI Content Library Page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "defaultSeo": {
+      "type": "component",
+      "component": "shared.seo",
+      "repeatable": false
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "library_articles",
+  "info": {
+    "singularName": "library-article",
+    "pluralName": "library-articles",
+    "displayName": "Library Article"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "preview_image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "video_link": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
