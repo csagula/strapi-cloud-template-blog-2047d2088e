@@ -507,38 +507,6 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
-  collectionName: "globals";
-  info: {
-    description: "Define global settings";
-    displayName: "Global";
-    pluralName: "globals";
-    singularName: "global";
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> &
-      Schema.Attribute.Private;
-    defaultSeo: Schema.Attribute.Component<"shared.seo", false>;
-    favicon: Schema.Attribute.Media<"images" | "files" | "videos">;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      "oneToMany",
-      "api::global.global"
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    siteDescription: Schema.Attribute.Text & Schema.Attribute.Required;
-    siteName: Schema.Attribute.String & Schema.Attribute.Required;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> &
-      Schema.Attribute.Private;
-  };
-}
-
 export interface ApiLibraryArticleLibraryArticle
   extends Struct.CollectionTypeSchema {
   collectionName: "library_articles";
@@ -1113,7 +1081,6 @@ declare module "@strapi/strapi" {
       "api::author.author": ApiAuthorAuthor;
       "api::blog-page.blog-page": ApiBlogPageBlogPage;
       "api::category.category": ApiCategoryCategory;
-      "api::global.global": ApiGlobalGlobal;
       "api::library-article.library-article": ApiLibraryArticleLibraryArticle;
       "api::vapi-content-library-page.vapi-content-library-page": ApiVapiContentLibraryPageVapiContentLibraryPage;
       "plugin::content-releases.release": PluginContentReleasesRelease;
